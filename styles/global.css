@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-nunito: "Nunito", sans-serif;
+  --ff-gill: "Gill Sans Ultra Bold", sans-serif;
+
+  --text: 700 18px/150% var(--ff-nunito);
+
+  --orange: #fe4510;
+  --white: #fff;
+}
+
+body {
+  font: var(--text);
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--orange);
+  cursor: pointer;
+  font: inherit;
+  color: var(--white);
+}
