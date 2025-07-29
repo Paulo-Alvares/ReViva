@@ -6,12 +6,19 @@
 
 :root {
   --ff-nunito: "Nunito", sans-serif;
-  --ff-gill: "Gill Sans Ultra Bold", sans-serif;
+  --ff-gill: "gill-sans-nova", sans-serif;
 
-  --text: 700 18px/150% var(--ff-nunito);
+  --hero: 40px var(--ff-gill);
+  --title: 24px/120% var(--ff-gill);
+  --subtitle: 20px/120% var(--ff-gill);
+  --text: 700 16px/150% var(--ff-nunito);
 
-  --orange: #fe4510;
   --white: #fff;
+  --black: #000;
+  --orange: #fe4510;
+  --blue: #73abe7;
+  --yellow: #ffae22;
+  --green: #6d9335;
 }
 
 body {
@@ -37,4 +44,34 @@ button {
   cursor: pointer;
   font: inherit;
   color: var(--white);
+  transition: 0.4s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-gill);
+}
+
+h1 {
+  font: var(--hero);
+}
+
+h2 {
+  font: var(--title);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font: var(--subtitle);
+}
+
+section,
+footer {
+  padding: 2rem 4rem;
 }
