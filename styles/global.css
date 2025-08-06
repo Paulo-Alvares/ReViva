@@ -75,3 +75,11 @@ section,
 footer {
   padding: 2rem 4rem;
 }
+
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: flex;
+}
