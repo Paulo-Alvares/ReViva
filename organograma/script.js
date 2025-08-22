@@ -6,7 +6,6 @@ function teamToClass(team) {
       return "team-tecnologia";
     case "finanças":
       return "team-financas";
-    // ... adicione conforme necessário
     default:
       return "";
   }
@@ -89,8 +88,6 @@ function showEmployeeModal(empId) {
     <hr>
     <strong>Descrição:</strong> ${emp.description || ""}<br><br>
     <strong>Responsabilidades:</strong> ${emp.responsibilities || ""}<br><br>
-    <strong>País:</strong> ${emp.country || ""}<br>
-    <strong>Tempo de empresa:</strong> ${emp.time || ""}
   `;
   modal.classList.add("show");
 }

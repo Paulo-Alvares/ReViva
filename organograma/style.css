@@ -18,22 +18,21 @@ h1 {
 }
 
 .team-diretoria {
-  border-color: #2574a9;
+  border-left: 6px solid #2574a9;
 }
 
 .team-tecnologia {
-  border-color: #8e44ad;
+  border-left: 6px solid #8e44ad;
 }
 
 .team-financas {
-  border-color: #c0392b;
+  border-left: 6px solid #c0392b;
 }
 
 .node {
   display: flex;
   align-items: center;
   margin: 10px 0;
-  border-left: 6px solid;
   background: #fff;
   padding: 7px 14px;
   border-radius: 8px;
