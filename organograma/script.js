@@ -1,11 +1,15 @@
 function teamToClass(team) {
-  switch (team.toLowerCase()) {
-    case "diretoria":
-      return "team-diretoria";
-    case "tecnologia":
+  switch (team) {
+    case "Marketing":
+      return "team-marketing";
+    case "Tecnologia":
       return "team-tecnologia";
-    case "finanças":
-      return "team-financas";
+    case "Recursos Humanos":
+      return "team-rh";
+    case "Administração":
+      return "team-administracao";
+    case "Pesquisa":
+      return "team-pesquisa";
     default:
       return "";
   }

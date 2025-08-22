@@ -17,7 +17,7 @@ h1 {
   align-items: center;
 }
 
-.team-diretoria {
+.team-marketing {
   border-left: 6px solid #2574a9;
 }
 
@@ -25,8 +25,16 @@ h1 {
   border-left: 6px solid #8e44ad;
 }
 
-.team-financas {
+.team-rh {
   border-left: 6px solid #c0392b;
+}
+
+.team-administracao {
+  border-left: 6px solid #f39c12;
+}
+
+.team-pesquisa {
+  border-left: 6px solid #16a085;
 }
 
 .node {
