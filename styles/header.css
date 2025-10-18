@@ -3,7 +3,7 @@ header {
   width: 100%;
   z-index: 1;
   position: fixed;
-  padding: 1rem 4rem;
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

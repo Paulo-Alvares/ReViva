@@ -21,6 +21,10 @@
   --green: #6d9335;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font: var(--text);
   font-weight: 700;
@@ -71,9 +75,8 @@ h3 {
   font: var(--subtitle);
 }
 
-section,
-footer {
-  padding: 2rem 4rem;
+section {
+  padding: 2rem;
 }
 
 .mobile-only {

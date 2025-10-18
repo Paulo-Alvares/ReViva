@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <title>Organograma ReViva</title>
+    <link rel="stylesheet" href="https://use.typekit.net/rve3bmj.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/team.css" />
+  </head>
+  <body>
+    <header>
+      <img src="assets/logo.svg" alt="Logo ReViva" />
+
+      <nav class="desktop-only">
+        <ul>
+          <a href="index.html#hero"><li>Home</li></a>
+          <a href="index.html#about"><li>Sobre Nós</li></a>
+          <a href="index.html#operation"><li>Operação</li></a>
+        </ul>
+        <a href="#doe"><button>Doe</button></a>
+      </nav>
+
+      <img
+        src="assets/menu.svg"
+        alt="Ícone de Menu"
+        class="mobile-only"
+        id="hamburger-icon"
+      />
+    </header>
+
+    <nav id="mobile-menu" class="mobile-only">
+      <div id="close-menu-container">
+        <img
+          src="assets/close.svg"
+          alt="Ícone de Fechar"
+          id="close-menu-icon"
+        />
+      </div>
+
+      <ul>
+        <a href="index.html#hero"><li>Home</li></a>
+        <a href="index.html#about"><li>Sobre Nós</li></a>
+        <a href="index.html#operation"><li>Operação</li></a>
+        <a href="#doe"><li>Doe</li></a>
+      </ul>
+    </nav>
+
+    <h1>Conheça a nossa <span>equipe</span></h1>
+
+    <div id="org-chart"></div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <script src="scripts/employees.js"></script>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

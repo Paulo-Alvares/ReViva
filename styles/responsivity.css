@@ -4,6 +4,56 @@
     --text: 700 14px/150% var(--ff-nunito);
   }
 
+  body {
+    overflow-x: hidden;
+  }
+
+  #mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 2000;
+  }
+
+  #mobile-menu.is-open {
+    transform: translateX(0);
+  }
+
+  #close-menu-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+  }
+
+  #close-menu-icon {
+    cursor: pointer;
+    height: 30px;
+  }
+
+  #mobile-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #mobile-menu ul a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    font: var(--ff-nunito);
+    border-bottom: 1px solid #eee;
+  }
+
+  #hamburger-icon {
+    cursor: pointer;
+  }
+
   section,
   footer {
     padding: 1rem;
@@ -34,13 +84,83 @@
       & .card {
         width: 100%;
         padding: 1rem;
+
+        &:nth-child(1),
+        &:nth-child(5) {
+          & h3 {
+            text-align: center;
+            margin: 0;
+            margin-bottom: 1rem;
+          }
+
+          & p {
+            text-align: center;
+            width: 100%;
+            margin: 0;
+          }
+        }
       }
 
-      & .card:nth-child(5) {
-        & h3,
+      & .value {
+        flex-direction: row;
+        justify-content: space-between;
+
         & p {
-          margin-left: 21rem;
+          width: 50%;
+          margin: 0;
+          text-align: start;
         }
+      }
+    }
+  }
+
+  section#operation {
+    & #cases {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      justify-content: flex-start;
+      gap: 2rem;
+    }
+
+    & #cases .case {
+      flex: 0 0 90%;
+      scroll-snap-align: center;
+      padding: 2rem;
+
+      & > * {
+        width: 100%;
+      }
+    }
+
+    & #cases > img {
+      display: none;
+    }
+
+    & #cases::-webkit-scrollbar {
+      display: none;
+    }
+
+    & #cases {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
+
+  footer {
+    flex-direction: column;
+
+    & address {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    & #resources {
+      margin-top: 2rem;
+      flex-direction: column;
+
+      & .resource-group {
+        margin: 0;
       }
     }
   }

@@ -21,15 +21,37 @@
 
       <nav class="desktop-only">
         <ul>
-          <a href="#home"><li>Home</li></a>
-          <a href="#sobre-nos"><li>Sobre Nós</li></a>
-          <a href="#operacao"><li>Operação</li></a>
+          <a href="#hero"><li>Home</li></a>
+          <a href="#about"><li>Sobre Nós</li></a>
+          <a href="#operation"><li>Operação</li></a>
         </ul>
         <a href="#doe"><button>Doe</button></a>
       </nav>
 
-      <img src="assets/menu.svg" alt="Ícone de Menu" class="mobile-only">
+      <img
+        src="assets/menu.svg"
+        alt="Ícone de Menu"
+        class="mobile-only"
+        id="hamburger-icon"
+      />
     </header>
+
+    <nav id="mobile-menu" class="mobile-only">
+      <div id="close-menu-container">
+        <img
+          src="assets/close.svg"
+          alt="Ícone de Fechar"
+          id="close-menu-icon"
+        />
+      </div>
+
+      <ul>
+        <a href="#hero"><li>Home</li></a>
+        <a href="#about"><li>Sobre Nós</li></a>
+        <a href="#operation"><li>Operação</li></a>
+        <a href="#doe"><li>Doe</li></a>
+      </ul>
+    </nav>
 
     <section id="hero">
       <div id="hero-copy">
@@ -135,7 +157,7 @@
             Fazemos oficinas para ensinar a montagem dos brinquedos para as
             crianças.
           </p>
-          <button>Participe</button>
+          <a href="galery.html"><button>Participe</button></a>
         </div>
 
         <img src="assets/operation/arrow.svg" alt="Seta para direita" />
@@ -150,11 +172,9 @@
             Distribuímos os brinquedos montados para as crianças, participantes
             ou não.
           </p>
-          <button>Trabalhe Conosco</button>
+          <a href="team.html"><button>Trabalhe Conosco</button></a>
         </div>
       </div>
-
-      <button>Ver Mais</button>
     </section>
 
     <footer>
@@ -206,5 +226,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="scripts/galery.js"></script>
   </body>
 </html>

@@ -1,0 +1,267 @@
+@import url(global.css);
+@import url(header.css);
+
+:root {
+  --team-administracao: #9673e7;
+  --team-marketing: #fe4510;
+  --team-tecnologia: #73abe7;
+  --team-rh: #ffae22;
+  --team-pesquisa: #6d9335;
+  --border-default: #00c5bf;
+}
+
+body {
+  background: url("../assets/background.svg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  padding: 8rem 1rem 2rem 1rem;
+  font-family: "Nunito", sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+h1 > span {
+  color: var(--orange);
+}
+
+#org-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.level {
+  display: flex;
+  position: relative;
+}
+
+.teams-level {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.team-column,
+.node-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.node {
+  background: #fff;
+  padding: 8px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  width: 225px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.node-photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+  border: 2px solid var(--border-default);
+}
+
+.team-administracao .node-photo {
+  border-color: var(--team-administracao);
+}
+
+.team-marketing .node-photo {
+  border-color: var(--team-marketing);
+}
+
+.team-tecnologia .node-photo {
+  border-color: var(--team-tecnologia);
+}
+
+.team-recursos-humanos .node-photo {
+  border-color: var(--team-rh);
+}
+
+.team-pesquisa .node-photo {
+  border-color: var(--team-pesquisa);
+}
+
+.node-info {
+  flex-grow: 0;
+}
+
+.node-info strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+}
+
+.node-info small {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+}
+
+.child-list {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+}
+
+.child-list.hidden {
+  display: none;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  font-size: 14px;
+  color: #555;
+  z-index: 3;
+}
+
+.arrow.collapsed::before {
+  content: "▼";
+}
+.arrow.expanded::before {
+  content: "▲";
+}
+
+.node-wrapper > .node + .child-list {
+  margin-top: 20px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 26px 30px;
+  border-radius: 13px;
+  min-width: 320px;
+  max-width: 500px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.19);
+  position: relative;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+.modal-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border-default);
+  margin-bottom: 10px;
+}
+
+.modal-photo.team-administracao {
+  border-color: var(--team-administracao);
+}
+.modal-photo.team-marketing {
+  border-color: var(--team-marketing);
+}
+.modal-photo.team-tecnologia {
+  border-color: var(--team-tecnologia);
+}
+.modal-photo.team-recursos-humanos {
+  border-color: var(--team-rh);
+}
+.modal-photo.team-pesquisa {
+  border-color: var(--team-pesquisa);
+}
+
+.modal-body strong {
+  font-size: 1.32em;
+}
+
+.modal-body small {
+  color: #555;
+}
+
+.modal-body hr {
+  margin: 15px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.modal-body p {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+@media (max-width: 900px) {
+  .teams-level {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-top: 30px;
+  }
+}
