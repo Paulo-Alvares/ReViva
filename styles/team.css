@@ -25,6 +25,11 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
+  border-color: var(--yellow);
+}
+
+button {
+  background-color: var(--yellow);
 }
 
 h1 {
@@ -34,7 +39,7 @@ h1 {
 }
 
 h1 > span {
-  color: var(--orange);
+  color: var(--yellow);
 }
 
 #org-chart {
