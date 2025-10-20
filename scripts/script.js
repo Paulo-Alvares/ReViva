@@ -39,7 +39,15 @@ function createEmployeeSubtree(employee) {
 
   const info = document.createElement("div");
   info.className = "node-info";
-  info.innerHTML = `<strong>${employee.name} ${employee.surname}</strong><br><small>${employee.role}</small>`;
+
+  // Cria o marcador colorido do time
+  const teamDot = document.createElement("span");
+  teamDot.className = `team-dot ${teamToClass(employee.team)}`;
+
+  // Monta o conteúdo
+  info.appendChild(teamDot);
+  info.innerHTML += `<strong>${employee.name} ${employee.surname}</strong><br><small>${employee.role}</small>`;
+
   node.appendChild(info);
 
   nodeWrapper.appendChild(node);
@@ -121,16 +129,26 @@ function showEmployeeModal(emp) {
   const teamClassName = teamToClass(emp.team);
 
   body.innerHTML = `
-    <img class="modal-photo ${teamClassName}" src="${emp.photo}" alt="${
-    emp.name
-  } foto">
-    <strong>${emp.name} ${emp.surname}</strong><br>
-    <small><b>${emp.role}</b> | Equipe: ${emp.team}</small>
-    <hr>
-    <p><strong>Descrição:</strong><br>${emp.description || "N/A"}</p>
-    <p><strong>Responsabilidades:</strong><br>${
-      emp.responsibilities || "N/A"
-    }</p>
+    <div class="modal-header">
+      <img 
+        class="modal-photo ${teamClassName}" 
+        src="${emp.photo}" 
+        alt="${emp.name} foto"
+      >
+      <strong>${emp.name} ${emp.surname}</strong> <br>
+      <small><b>${emp.role}</b> | ${emp.team}</small>
+    </div>
+    <hr class="${teamClassName}">
+    <p>
+      <strong>Descrição:</strong> <br> 
+      ${emp.description || "N/A"}
+    </p>
+    <p>
+      <strong>Responsabilidades:</strong> <br>
+      ${emp.responsibilities || "N/A"}
+    </p>
+    <img class="modal-mascot-1" src="./assets/team/mascots/${teamClassName}-1.svg" alt="Mascote ReViva" />
+    <img class="modal-mascot-2" src="./assets/team/mascots/${teamClassName}-2.svg" alt="Mascote ReViva" />
   `;
 
   modal.classList.add("show");

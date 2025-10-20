@@ -6,18 +6,23 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Galeria</title>
+
     <link rel="stylesheet" href="styles/index.css" />
     <link rel="stylesheet" href="https://use.typekit.net/rve3bmj.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
       rel="stylesheet"
     />
+    <title>Galeria</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css"
+    />
     <link rel="stylesheet" href="styles/galery.css" />
   </head>
   <body>
     <header>
-      <img src="assets/logo.svg" alt="Logo ReViva" />
+      <a href="index.html"><img src="assets/logo.svg" alt="Logo ReViva" /></a>
 
       <nav class="desktop-only">
         <ul>
@@ -53,58 +58,225 @@
       </ul>
     </nav>
 
-    <main>ola</main>
+    <h1>Faça <span>parte</span>, faça a <span>diferença</span></h1>
 
-    <footer>
-      <address>
-        <img src="assets/logo.svg" alt="Logo ReViva" />
+    <!-- Estrutura do carrossel -->
+    <div id="splide" class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide" style="background-color: #fe4510">
+            <img src="./assets/galery/news/news-1.png" alt="Nóticia 1" />
 
-        <div id="social">
-          <a href="mailto:reviva@gmail.com">
-            <img src="assets/footer/email.svg" alt="Ícone de E-mail" />
-          </a>
+            <div class="splide__caption">
+              <h2>Apresentação ReViva<span>20/10</span></h2>
+              <p>Venha conferir a apresentação do ReViva</p>
+            </div>
+          </li>
+          <li class="splide__slide" style="background-color: #6d9335">
+            <img src="./assets/galery/news/news-2.png" alt="Nóticia 2" />
 
-          <a href="#">
-            <img src="assets/footer/instagram.svg" alt="Ícone de Instagram" />
-          </a>
+            <div class="splide__caption">
+              <h2>Novembro Negro<span>17/11</span></h2>
+              <p>Evento especial para o dia da consciência negra</p>
+            </div>
+          </li>
+          <li class="splide__slide" style="background-color: #ffae22">
+            <img src="./assets/galery/news/news-3.png" alt="Nóticia 3" />
 
-          <a href="#">
-            <img src="assets/footer/tiktok.svg" alt="Ícone de TikTok" />
-          </a>
+            <div class="splide__caption">
+              <h2>Realinhamento<span>25/11</span></h2>
+              <p>
+                Realinhamento de resultado pós apresentação do ReViva. E mudança
+                de lideranças
+              </p>
+            </div>
+          </li>
+          <li class="splide__slide" style="background-color: #73abe7">
+            <img src="./assets/galery/news/news-4.png" alt="Nóticia 4" />
 
-          <a href="#">
-            <img src="assets/footer/github.svg" alt="Ícone de GitHub" />
-          </a>
+            <div class="splide__caption">
+              <h2>Natal da ReViva<span>25/12</span></h2>
+              <p>Evento especial para o dia de Natal</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Linha do tempo + carrosséis -->
+    <section class="timeline-section">
+      <div class="timeline september">
+        <h2>Setembro</h2>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Setembro Amarelo<span>01/09/2025</span></h3>
+
+            <!-- Carrossel 1 -->
+            <div class="splide timeline-carousel" id="splide-timeline-1">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img src="./assets/test.png" alt="" />
+                  </li>
+                  <li class="splide__slide">
+                    <img src="./assets/test.png" alt="" />
+                  </li>
+                  <li class="splide__slide">
+                    <img src="./assets/test.png" alt="" />
+                  </li>
+                  <li class="splide__slide">
+                    <img src="./assets/test.png" alt="" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </address>
 
-      <div id="resources">
-        <div class="resource-group">
-          <h3>Recursos</h3>
-          <ul>
-            <a href="#"><li>Termos e Condições</li></a>
-            <a href="#"><li>Política de Privacidade</li></a>
-            <a href="#"><li>Politica de Cookies</li></a>
-          </ul>
-        </div>
-        <div class="resource-group">
-          <h3>ONG</h3>
-          <ul>
-            <a href="#"><li>Trabalhe Conosco</li></a>
-            <a href="#"><li>Documentação</li></a>
-            <a href="#"><li>Conteúdos</li></a>
-          </ul>
-        </div>
-        <div class="resource-group">
-          <h3>Suporte</h3>
-          <ul>
-            <a href="#"><li>Perguntas Frequentes (FAQ)</li></a>
-            <a href="#"><li>Fale Conosco</li></a>
-          </ul>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Setembro Amarelo<span>01/09/2025</span></h3>
+
+            <!-- Carrossel 2 -->
+            <div class="splide timeline-carousel" id="splide-timeline-2">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide"></li>
+                  <li class="splide__slide"></li>
+                  <li class="splide__slide"></li>
+                  <li class="splide__slide"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
 
-    <script src="scripts/galery.js"></script>
+      <div class="timeline august">
+        <h2>Agosto</h2>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Espro no Teatro<span>18/08/2025</span></h3>
+
+            <!-- Carrossel 1 -->
+            <div class="splide timeline-carousel" id="splide-timeline-3">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img src="./assets/test.png" alt="" />
+                  </li>
+                  <li class="splide__slide">
+                    <img src="./assets/test.png" alt="" />
+                  </li>
+                  <li class="splide__slide">
+                    <img src="./assets/test.png" alt="" />
+                  </li>
+                  <li class="splide__slide">
+                    <img src="./assets/test.png" alt="" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Setembro Amarelo<span>01/09/2025</span></h3>
+
+            <!-- Carrossel 2 -->
+            <div class="splide timeline-carousel" id="splide-timeline-4">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide"></li>
+                  <li class="splide__slide"></li>
+                  <li class="splide__slide"></li>
+                  <li class="splide__slide"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Importa o JS do Splide -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Carrossel principal
+        new Splide("#splide", {
+          type: "loop",
+          perPage: 1,
+          focus: "center",
+          gap: "1rem",
+          padding: "5rem",
+          autoplay: true,
+          interval: 3000,
+          pauseOnHover: true,
+          arrows: true,
+          pagination: true,
+        }).mount();
+
+        // Carrossel de Breakpoints 1
+        new Splide("#splide-timeline-1", {
+          type: "loop",
+          perPage: 3,
+          gap: "1rem",
+          pagination: false,
+          arrows: true,
+          breakpoints: {
+            1024: { perPage: 2 },
+            768: { perPage: 1 },
+          },
+        }).mount();
+
+        // Carrossel de Breakpoints 2
+        new Splide("#splide-timeline-2", {
+          type: "loop",
+          perPage: 3,
+          gap: "1rem",
+          pagination: false,
+          arrows: true,
+          breakpoints: {
+            1024: { perPage: 2 },
+            768: { perPage: 1 },
+          },
+        }).mount();
+
+        // Carrossel de Breakpoints 2
+        new Splide("#splide-timeline-3", {
+          type: "loop",
+          perPage: 3,
+          gap: "1rem",
+          pagination: false,
+          arrows: true,
+          breakpoints: {
+            1024: { perPage: 2 },
+            768: { perPage: 1 },
+          },
+        }).mount();
+
+        // Carrossel de Breakpoints 2
+        new Splide("#splide-timeline-4", {
+          type: "loop",
+          perPage: 3,
+          gap: "1rem",
+          pagination: false,
+          arrows: true,
+          breakpoints: {
+            1024: { perPage: 2 },
+            768: { perPage: 1 },
+          },
+        }).mount();
+      });
+    </script>
   </body>
 </html>

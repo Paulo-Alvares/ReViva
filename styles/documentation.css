@@ -1,0 +1,76 @@
+@import url(../styles/global.css);
+@import url(../styles/header.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --team-administracao: #9673e7;
+  --orange: #fe4510;
+  --team-tecnologia: #73abe7;
+  --team-rh: #ffae22;
+  --team-pesquisa: #6d9335;
+  --border-default: #00c5bf;
+}
+
+body {
+  background: url("../assets/background.svg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  padding: 8rem 1rem 2rem 1rem;
+  font-family: "Nunito", sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+h1 {
+  text-align: center;
+  font: 24px/120% var(--ff-gill);
+}
+
+h2 {
+  font: 18px/120% var(--ff-gill);
+  text-align: start;
+  margin-top: 2rem;
+}
+
+h1 > span {
+  color: var(--orange);
+}
+
+section {
+  width: 60%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+  font: 400 16px/150% var(--ff-nunito);
+}
+
+.last-update {
+  text-align: center;
+  font: 400 14px/150% var(--ff-nunito);
+  color: #6c6c6c;
+  margin-bottom: 2rem;
+}
+
+section ul {
+  list-style: circle;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+section a {
+  color: var(--orange);
+  font-weight: bold;
+}

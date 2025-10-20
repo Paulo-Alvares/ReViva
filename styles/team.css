@@ -14,7 +14,7 @@ body {
   background: url("../assets/background.svg") no-repeat center center;
   background-size: cover;
   width: 100%;
-  min-height: 100vh;
+  min-height: 1000px;
   padding: 8rem 1rem 2rem 1rem;
   font-family: "Nunito", sans-serif;
 }
@@ -29,9 +29,8 @@ header {
 
 h1 {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-  font-weight: 800;
+  margin-bottom: 20px;
+  font: 24px/120% var(--ff-gill);
 }
 
 h1 > span {
@@ -39,6 +38,7 @@ h1 > span {
 }
 
 #org-chart {
+  height: 1150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,7 +69,7 @@ h1 > span {
 
 .node {
   background: #fff;
-  padding: 8px;
+  padding: 4px;
   border-radius: 50px;
   display: flex;
   align-items: center;
@@ -87,15 +87,16 @@ h1 > span {
 }
 
 .node-photo {
-  width: 48px;
-  height: 48px;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   margin-right: 12px;
   object-fit: cover;
-  border: 2px solid var(--border-default);
+  border: 4px solid white;
+  z-index: 1;
 }
 
-.team-administracao .node-photo {
+/* .team-administracao .node-photo {
   border-color: var(--team-administracao);
 }
 
@@ -113,7 +114,7 @@ h1 > span {
 
 .team-pesquisa .node-photo {
   border-color: var(--team-pesquisa);
-}
+} */
 
 .node-info {
   flex-grow: 0;
@@ -162,11 +163,27 @@ h1 > span {
   z-index: 3;
 }
 
-.arrow.collapsed::before {
-  content: "▼";
-}
+.arrow.collapsed::before,
 .arrow.expanded::before {
-  content: "▲";
+  content: "";
+  display: inline-block;
+  width: 14px; /* ajuste conforme o tamanho desejado */
+  height: 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: transform 0.2s ease;
+  vertical-align: middle;
+}
+
+/* seta para baixo (colapsado) */
+.arrow.collapsed::before {
+  background-image: url("../assets/team/down.svg");
+}
+
+/* seta para cima (expandido) */
+.arrow.expanded::before {
+  background-image: url("../assets/team/up.svg");
 }
 
 .node-wrapper > .node + .child-list {
@@ -192,66 +209,98 @@ h1 > span {
 
 .modal-content {
   background: #fff;
-  padding: 26px 30px;
-  border-radius: 13px;
-  min-width: 320px;
-  max-width: 500px;
+  padding: 3rem 4rem;
+  border-radius: 50px;
+  width: 700px;
+  height: 591px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.19);
   position: relative;
+  overflow: hidden;
 }
 
-.modal-body {
+#modal-body {
   text-align: center;
 }
 
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .modal-photo {
-  width: 90px;
-  height: 90px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid var(--border-default);
+  border: 5px solid var(--border-default);
   margin-bottom: 10px;
 }
 
-.modal-photo.team-administracao {
+.modal-header strong {
+  font: 700 32px/120% var(--ff-nunito);
+}
+
+.modal-header small {
+  margin-top: -1rem;
+  font: 700 16px/120% var(--ff-nunito);
+}
+
+.modal-header b {
+  font: 700 16px/120% var(--ff-nunito);
+}
+
+.modal-photo.team-administracao,
+#modal-body hr.team-administracao {
   border-color: var(--team-administracao);
 }
-.modal-photo.team-marketing {
+.modal-photo.team-marketing,
+#modal-body hr.team-marketing {
   border-color: var(--team-marketing);
 }
-.modal-photo.team-tecnologia {
+.modal-photo.team-tecnologia,
+#modal-body hr.team-tecnologia {
   border-color: var(--team-tecnologia);
 }
-.modal-photo.team-recursos-humanos {
+.modal-photo.team-recursos-humanos,
+#modal-body hr.team-recursos-humanos {
   border-color: var(--team-rh);
 }
-.modal-photo.team-pesquisa {
+.modal-photo.team-pesquisa,
+#modal-body hr.team-pesquisa {
   border-color: var(--team-pesquisa);
 }
 
-.modal-body strong {
-  font-size: 1.32em;
-}
-
-.modal-body small {
-  color: #555;
-}
-
-.modal-body hr {
+#modal-body hr {
   margin: 15px 0;
   border: 0;
-  border-top: 1px solid #eee;
+  border-top: 4px solid;
+  border-radius: 50px;
 }
 
-.modal-body p {
+#modal-body p {
   text-align: left;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  font: 400 16px/120% var(--ff-nunito);
+  max-width: 70%;
+}
+
+.modal-mascot-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.modal-mascot-2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .close {
   position: absolute;
-  right: 15px;
-  top: 10px;
+  right: 3rem;
+  top: 2rem;
   font-size: 28px;
   cursor: pointer;
   color: #aaa;
@@ -264,4 +313,37 @@ h1 > span {
     gap: 40px;
     padding-top: 30px;
   }
+}
+
+.team-dot {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.25rem;
+  height: 100%;
+  border-radius: 100px 0 0 100px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Cores específicas por equipe */
+.team-dot.team-administracao {
+  background-color: var(--team-administracao);
+}
+
+.team-dot.team-marketing {
+  background-color: var(--team-marketing);
+}
+
+.team-dot.team-tecnologia {
+  background-color: var(--team-tecnologia);
+}
+
+.team-dot.team-recursos-humanos {
+  background-color: var(--team-rh);
+}
+
+.team-dot.team-pesquisa {
+  background-color: var(--team-pesquisa);
 }

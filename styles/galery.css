@@ -1,15 +1,195 @@
-@import url(global.css);
 @import url(header.css);
 @import url(footer.css);
 
 body {
-  height: 100vh;
+  padding: 6rem 2rem;
+  font-family: "Nunito", sans-serif;
+}
+
+header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font: 24px/120% var(--ff-gill);
+}
+
+h1 > span {
+  color: var(--orange);
+}
+
+.splide {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.splide__slide {
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.splide__slide img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.splide__caption {
+  margin-top: 1rem;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  text-align: left;
+}
+
+h2 > span {
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 1rem;
+}
+
+p {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  text-align: left;
+  font-size: 16px;
+}
+
+/* ===== LINHA DO TEMPO ===== */
+.timeline-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  border-left: 3px solid var(--orange);
+}
+
+.timeline > h2 {
+  margin: 0 0 1rem 2.2rem;
+  font: 500 26px/120% var(--ff-nunito);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  position: relative;
   width: 100%;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  background-color: var(--orange);
+  border-radius: 50%;
+  position: absolute;
+  left: -8px;
+  top: 0.4rem;
+}
+
+.timeline-content h3 {
+  margin: 0.25rem 0 1rem 2.2rem;
+  font: 900 18px/120% var(--ff-nunito);
+}
+
+.timeline-content h3 > span {
+  margin-left: 1rem;
+  font: 400 14px/150% var(--ff-nunito);
+  color: #6c6c6c;
+}
+
+/* ===== CARROSSEL DE BREAKPOINT ===== */
+.timeline-carousel {
+  width: 80rem;
+}
+
+.timeline-carousel .splide__slide {
+  background-color: var(--orange);
+  min-height: 200px;
+  border-radius: 10px;
+}
+
+.september {
+  border-left: 3px solid var(--yellow);
+
+  .timeline-dot {
+    background-color: var(--yellow);
+  }
+
+  .timeline-carousel .splide__slide {
+    background-color: var(--yellow);
+  }
+}
+
+/* Responsividade para carrossel */
+@media (max-width: 768px) {
+  .timeline {
+    border-left: 2px solid var(--orange);
+    padding-left: 1rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 14px;
+  }
+}
+
+/* ===== AJUSTE DOS CONTROLES (setas fora do carrossel) ===== */
+.timeline-carousel .splide__arrows {
+  position: absolute;
+  top: 50%;
   width: 100%;
+  transform: translateY(-50%);
+  pointer-events: none; /* permite clique apenas nas setas */
+}
+
+.timeline-carousel .splide__arrow {
+  border: none;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  pointer-events: all;
+  transition: transform 0.2s ease;
+}
+
+.timeline-carousel .splide__arrow:hover {
+  transform: scale(1.1);
+}
+
+.timeline-carousel .splide__arrow--prev {
+  left: -45px; /* seta esquerda fora do carrossel */
+}
+
+.timeline-carousel .splide__arrow--next {
+  right: -45px; /* seta direita fora do carrossel */
+}
+
+/* Ajusta posicionamento para telas menores */
+@media (max-width: 768px) {
+  .timeline-carousel .splide__arrow--prev {
+    left: -25px;
+  }
+
+  .timeline-carousel .splide__arrow--next {
+    right: -25px;
+  }
 }

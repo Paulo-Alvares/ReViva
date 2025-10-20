@@ -6,7 +6,10 @@ footer {
   padding: .5rem 2rem;
 
   & address {
-    width: 19rem;
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     & > img {
       width: 100%;
@@ -14,7 +17,7 @@ footer {
     }
 
     & #social {
-      width: min-content;
+      width: 100%;
       border: 3px solid var(--orange);
       border-radius: .5rem;
       padding: .3rem .5rem;
@@ -46,7 +49,7 @@ footer {
     gap: 1rem;
 
     & .resource-group {
-      margin: 2rem;
+      margin: 1rem 2rem;
       display: flex;
       flex-direction: column;
       gap: .5rem;
