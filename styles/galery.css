@@ -4,6 +4,7 @@
 body {
   padding: 6rem 2rem;
   font-family: "Nunito", sans-serif;
+  overflow-x: hidden;
 }
 
 header {
@@ -11,6 +12,11 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
+  border-color: var(--orange);
+}
+
+button {
+  background-color: var(--orange);
 }
 
 h1 {
@@ -25,11 +31,11 @@ h1 > span {
 
 .splide {
   max-width: 90%;
-  margin: 0 auto;
+  margin-left: 4rem;
 }
 
 .splide__slide {
-  padding: 1rem;
+  padding: .5rem;
   border-radius: 1rem;
 }
 
@@ -37,6 +43,16 @@ h1 > span {
   width: 100%;
   height: 200px;
   border-radius: 10px;
+}
+
+section .splide__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & img {
+    width: auto;
+  }
 }
 
 .splide__caption {
@@ -125,18 +141,6 @@ p {
   background-color: var(--orange);
   min-height: 200px;
   border-radius: 10px;
-}
-
-.september {
-  border-left: 3px solid var(--yellow);
-
-  .timeline-dot {
-    background-color: var(--yellow);
-  }
-
-  .timeline-carousel .splide__slide {
-    background-color: var(--yellow);
-  }
 }
 
 /* Responsividade para carrossel */

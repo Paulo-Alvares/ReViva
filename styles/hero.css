@@ -17,7 +17,7 @@ section#hero {
       font: var(--hero);
 
       & span {
-        color: var(--orange);
+        color: var(--blue);
       }
     }
 

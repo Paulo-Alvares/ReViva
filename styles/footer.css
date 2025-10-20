@@ -1,5 +1,5 @@
 footer {
-  border-top: 5px solid var(--orange);
+  border-top: 5px solid var(--blue);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,7 +18,7 @@ footer {
 
     & #social {
       width: 100%;
-      border: 3px solid var(--orange);
+      border: 3px solid var(--blue);
       border-radius: .5rem;
       padding: .3rem .5rem;
       display: flex;
@@ -55,7 +55,7 @@ footer {
       gap: .5rem;
 
       & h3 {
-        color: var(--orange);
+        color: var(--blue);
       }
 
       & ul {

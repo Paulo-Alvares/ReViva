@@ -7,7 +7,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 5px solid var(--orange);
+  border-bottom: 5px solid var(--blue);
 
   & nav {
     display: flex;
